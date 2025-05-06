@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>OBSERVATORIO DE BIENESTAR UNIVERSITARIO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>OBSERVATORIO DE BIENESTAR UNIVERSITARIO</h1>
+    <div id="barraProgreso">
+      Sección <span id="numSeccion">1</span> de <span id="totalSecciones">4</span>
+    </div>
+    <form id="encuestaForm" novalidate>
+      <!-- ========== SECCIÓN 1: GESTIÓN DE BIENESTAR UNIVERSITARIO ========== -->
+      <section class="seccion activa" id="seccion1">
+        <h2>Gestión de Bienestar Universitario</h2>
+        <!-- SubSección: Presupuesto -->
+        <h3>Presupuesto asignado a las actividades de Bienestar universitario en la IES</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Institución</th>
+              <th>Año</th>
+              <th>Rango presupuestal anual (millones de pesos)</th>
+              <th>Eliminar</th>
+            </tr>
+          </thead>
+          <tbody id="tablaPresupuestoBody"></tbody>
+        </table>
+        <div class="botonera-tabla">
+          <button type="button" onclick="agregarFilaPresupuesto()">➕ Agregar fila</button>
+        </div>
+        <!-- Pregunta: Fuente de recursos -->
+        <h3>Fuente de los recursos</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Año</th>
+              <th>Fuente</th>
+              <th>Tipo de entidad (si externa)</th>
+              <th>Porcentaje según fuente</th>
+              <th>Eliminar</th>
+            </tr>
+          </thead>
+          <tbody id="tablaFuenteBody"></tbody>
+        </table>
+        <div class="botonera-tabla">
+          <button type="button" onclick="agregarFilaFuente()">➕ Agregar fila</button>
+        </div>
+        <!-- Pregunta: Porcentaje por área -->
+        <h3>Porcentaje del presupuesto asignado a cada área</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Año</th>
+              <th>Área</th>
+              <th>Porcentaje (%)</th>
+              <th>Eliminar</th>
+            </tr>
+          </thead>
+          <tbody id="tablaAreaBody"></tbody>
+        </table>
+        <div class="botonera-tabla">
+          <button type="button" onclick="agregarFilaArea()">➕ Agregar fila</button>
+        </div>
+        <div class="botones">
+          <button type="button" onclick="siguienteSeccion(1)">Siguiente sección</button>
+        </div>
+      </section>
+      <!-- ========== SECCIÓN 2: PERSONAL POR ÁREA ========== -->
+      <section class="seccion" id="seccion2">
+        <h2>Personal por área de Bienestar Universitario</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Identificador Persona</th>
+              <th>Nivel jerárquico</th>
+              <th>Área Temática</th>
+              <th>Nivel educativo</th>
+              <th>Tipo de Contrato</th>
+              <th>Estado del contrato</th>
+              <th>Género</th>
+              <th>Fecha de nacimiento</th>
+              <th>Eliminar</th>
+            </tr>
+          </thead>
+          <tbody id="tablaPersonalBody"></tbody>
+        </table>
+        <div class="botonera-tabla">
+          <button type="button" onclick="agregarFilaPersonal()">➕ Agregar fila</button>
+        </div>
+        <div class="botones">
+          <button type="button" onclick="anteriorSeccion(2)">Anterior</button>
+          <button type="button" onclick="siguienteSeccion(2)">Siguiente sección</button>
+        </div>
+      </section>
+      <!-- ========== SECCIÓN 3: SALUD MENTAL ========== -->
+      <section class="seccion" id="seccion3">
+        <h2>Demanda de los servicios de salud mental ofrecidos por la IES</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Identificador</th>
+              <th>Vínculo</th>
+              <th>Fecha solicitud de cita</th>
+              <th>Fecha asignación de cita</th>
+              <th>Género</th>
+              <th>Fecha de nacimiento</th>
+              <th>Motivo de consulta</th>
+              <th>Detalle (si conducta suicida)</th>
+              <th>Fecha (si conducta suicida)</th>
+              <th>Eliminar</th>
+            </tr>
+          </thead>
+          <tbody id="tablaSaludBody"></tbody>
+        </table>
+        <div class="botonera-tabla">
+          <button type="button" onclick="agregarFilaSalud()">➕ Agregar fila</button>
+        </div>
+        <div class="botones">
+          <button type="button" onclick="anteriorSeccion(3)">Anterior</button>
+          <button type="button" onclick="siguienteSeccion(3)">Siguiente sección</button>
+        </div>
+      </section>
+      <!-- ========== SECCIÓN 4: ACTIVIDAD FÍSICA ========== -->
+      <section class="seccion" id="seccion4">
+        <h2>Disponibilidad de Instalaciones Actividad Física</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Tipo de Instalación</th>
+              <th>Cantidad de espacios</th>
+              <th>Eliminar</th>
+            </tr>
+          </thead>
+          <tbody id="tablaInstalacionBody"></tbody>
+        </table>
+        <div class="botonera-tabla">
+          <button type="button" onclick="agregarFilaInstalacion()">➕ Agregar fila</button>
+        </div>
+        <div class="botones">
+          <button type="button" onclick="anteriorSeccion(4)">Anterior</button>
+          <button type="submit">Enviar</button>
+        </div>
+      </section>
+    </form>
+    <div class="botonera-export">
+      <button type="button" onclick="exportarExcel()">Exportar a Excel</button>
+    </div>
+    <div id="mensajeFinal" class="oculto"></div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

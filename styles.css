@@ -1,0 +1,128 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+main {
+  max-width: 1100px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px 30px 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 32px rgba(44,62,80,0.12);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #215e8b;
+}
+
+h2 {
+  color: #215e8b;
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-size: 1.15rem;
+}
+
+h3 {
+  color: #2980b9;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+#barraProgreso {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 22px;
+  color: #2980b9;
+  font-size: 1.1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 8px;
+}
+
+th, td {
+  border: 1px solid #d1e0e7;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background: #eaf3fa;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 7px;
+  margin-top: 2px;
+  border: 1.5px solid #bfc9d1;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: #f8fafc;
+  transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+  border-color: #2980b9;
+  outline: none;
+}
+
+.botonera-tabla, .botonera-export {
+  margin-bottom: 12px;
+  text-align: right;
+}
+
+.botones {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background: #2980b9;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #215e8b;
+}
+
+.seccion {
+  display: none;
+}
+
+.seccion.activa {
+  display: block;
+}
+
+.oculto {
+  display: none;
+}
+
+#mensajeFinal {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #27ae60;
+  margin-top: 30px;
+  font-weight: bold;
+}
