@@ -145,6 +145,188 @@
           <button type="submit">Enviar</button>
         </div>
       </section>
+      <!-- Sección CULTURA -->
+    <section id="seccion-cultura" class="seccion activa">
+      <h2>CULTURA</h2>
+      <!-- Barra de progreso de preguntas de la sección -->
+      <div id="progresoPreguntasCultura"></div>
+
+      <!-- Pregunta 1: Actividades y programas culturales -->
+      <div class="pregunta-cultura pregunta-activa">
+        <h3>1. Actividades y programas culturales organizados por su universidad durante el año</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Actividad/Programa</th>
+              <th>Estamento</th>
+              <th>Género</th>
+              <th>N° Participantes</th>
+              <th>Eliminar</th>
+            </tr>
+          </thead>
+          <tbody id="tablaActividadesCultura"></tbody>
+        </table>
+        <div class="botonera-tabla">
+          <button type="button" onclick="agregarFilaActividadesCultura()">➕ Agregar fila</button>
+        </div>
+        <div class="botones">
+          <button type="button" onclick="siguientePreguntaCultura()">Siguiente</button>
+        </div>
+      </div>
+
+      <!-- Pregunta 2: Asociaciones culturales -->
+      <div class="pregunta-cultura">
+        <h3>2. ¿Su universidad participa en alguna Asociación Cultural?</h3>
+        <select id="asociacionCultural" required onchange="toggleAsociacionCultural(this)">
+          <option value="" disabled selected>Seleccione</option>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+        <div class="botones">
+          <button type="button" onclick="anteriorPreguntaCultura()">Anterior</button>
+          <button type="button" onclick="siguientePreguntaCultura()">Siguiente</button>
+        </div>
+        <!-- Si responde Sí, tabla adicional -->
+        <div id="detalleAsociacionCultural" style="display:none; margin-top: 15px;">
+          <h4>¿Cuáles son y cuántas personas de la Comunidad Universitaria participan en ellas?</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Asociación Cultural</th>
+                <th>N° Participantes</th>
+                <th>Estamento</th>
+                <th>Género</th>
+                <th>Eliminar</th>
+              </tr>
+            </thead>
+            <tbody id="tablaAsociacionesCulturales"></tbody>
+          </table>
+          <div class="botonera-tabla">
+            <button type="button" onclick="agregarFilaAsociacionCultural()">➕ Agregar fila</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pregunta 3: Grupos representativos -->
+      <div class="pregunta-cultura">
+        <h3>3. ¿Cuántos grupos representativos de estudiantes, profesores y/o administrativos existen en su institución?</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Grupo</th>
+              <th>Miembros</th>
+              <th>Estamento</th>
+              <th>Eliminar</th>
+            </tr>
+          </thead>
+          <tbody id="tablaGruposRepresentativos"></tbody>
+        </table>
+        <div class="botonera-tabla">
+          <button type="button" onclick="agregarFilaGrupoRepresentativo()">➕ Agregar fila</button>
+        </div>
+        <div class="botones">
+          <button type="button" onclick="anteriorPreguntaCultura()">Anterior</button>
+          <button type="button" onclick="siguientePreguntaCultura()">Siguiente</button>
+        </div>
+      </div>
+
+      <!-- Pregunta 4: Estímulos y apoyos -->
+      <div class="pregunta-cultura">
+        <h3>4. ¿Su universidad ofrece algún tipo de estímulo académico o económico a los estudiantes que participan en actividades culturales?</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Tipo de apoyo o estímulo</th>
+              <th>Número de apoyos o estímulos</th>
+              <th>Monto o porcentaje entregado</th>
+              <th>Eliminar</th>
+            </tr>
+          </thead>
+          <tbody id="tablaEstimulosApoyos"></tbody>
+        </table>
+        <div class="botonera-tabla">
+          <button type="button" onclick="agregarFilaEstimuloApoyo()">➕ Agregar fila</button>
+        </div>
+        <div class="botones">
+          <button type="button" onclick="anteriorPreguntaCultura()">Anterior</button>
+          <button type="button" onclick="siguientePreguntaCultura()">Siguiente</button>
+        </div>
+      </div>
+
+      <!-- Pregunta 5: Otras actividades de promoción -->
+      <div class="pregunta-cultura">
+        <h3>5. ¿Su universidad organiza otras actividades de promoción enfocadas en la cultura?</h3>
+        <textarea required placeholder="Describa las actividades, por ejemplo: torneos interfacultades, festivales, etc."></textarea>
+        <div class="botones">
+          <button type="button" onclick="anteriorPreguntaCultura()">Anterior</button>
+          <button type="button" onclick="siguientePreguntaCultura()">Siguiente</button>
+        </div>
+      </div>
+
+      <!-- Pregunta 6: Eventos académicos -->
+      <div class="pregunta-cultura">
+        <h3>6. ¿Su universidad organiza eventos académicos relacionados con el área de cultura?</h3>
+        <select id="eventosAcademicos" required onchange="toggleEventosAcademicos(this)">
+          <option value="" disabled selected>Seleccione</option>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+        <div class="botones">
+          <button type="button" onclick="anteriorPreguntaCultura()">Anterior</button>
+          <button type="button" onclick="siguientePreguntaCultura()">Siguiente</button>
+        </div>
+        <!-- Si responde Sí, tabla adicional -->
+        <div id="detalleEventosAcademicos" style="display:none; margin-top: 15px;">
+          <h4>¿Cuáles?</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Evento académico</th>
+                <th>N° de participantes</th>
+                <th>Duración promedio (días)</th>
+                <th>Eliminar</th>
+              </tr>
+            </thead>
+            <tbody id="tablaEventosAcademicos"></tbody>
+          </table>
+          <div class="botonera-tabla">
+            <button type="button" onclick="agregarFilaEventoAcademico()">➕ Agregar fila</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pregunta 7: Actividades de responsabilidad social -->
+      <div class="pregunta-cultura">
+        <h3>7. ¿Su universidad lleva a cabo actividades de responsabilidad social relacionadas con el área de cultura?</h3>
+        <select id="responsabilidadSocial" required onchange="toggleResponsabilidadSocial(this)">
+          <option value="" disabled selected>Seleccione</option>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+        <div class="botones">
+          <button type="button" onclick="anteriorPreguntaCultura()">Anterior</button>
+          <button type="button" onclick="finalizarSeccionCultura()">Finalizar sección</button>
+        </div>
+        <!-- Si responde Sí, tabla adicional -->
+        <div id="detalleResponsabilidadSocial" style="display:none; margin-top: 15px;">
+          <h4>¿Cuáles?</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Actividad</th>
+                <th>N° de participantes</th>
+                <th>Eliminar</th>
+              </tr>
+            </thead>
+            <tbody id="tablaResponsabilidadSocial"></tbody>
+          </table>
+          <div class="botonera-tabla">
+            <button type="button" onclick="agregarFilaResponsabilidadSocial()">➕ Agregar fila</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Fin de la sección CULTURA -->
     </form>
     <div class="botonera-export">
       <button type="button" onclick="exportarExcel()">Exportar a Excel</button>
